@@ -1,0 +1,118 @@
+﻿<!doctype html>
+<html lang="zxx">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Productos</title>
+    <link rel="icon" href="../../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../Content/template/bootstrap.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../../Content/template/Animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../../Content/template/owl.carousel.min">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../../Content/template/All.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../../Content/template/flaticon.css">
+    <link rel="stylesheet" href="../../Content/template/themify-icons.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../../Content/template/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../../Content/template/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../../Content/template/style.css">
+</head>
+
+<body>
+    <!-- Header part end-->
+    <!-- breadcrumb part start-->
+    <section class="breadcrumb_part">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcrumb-item">
+                        <h2>Lista de Productos</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="breadcrumb-item">
+                        <a class="nav-link" href="@Url.Action("Form", "Producto", "Producto")"><h2>Agregar Productos</h2></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- breadcrumb part end-->
+    <!-- product list part start-->
+    <section class="product_list section_padding">
+        <div class="container">
+            <div class="product_list">
+                <div class="row">
+                    @foreach (ML.Producto producto in Model.Productos)
+                    {
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="single_product_item">
+                                @if (producto.Imagen != null && producto.Imagen != "")
+                                {
+                                    <img src="data:image/*;base64,@producto.Imagen" class="rounded mx-auto" style="width:auto ; height:150px" />
+                                }
+                                else
+                                {
+
+                                    <img src="~/img/single_product_1.png" width="auto" class="rounded mx-auto" height="150px" id="Img" />
+                                }
+
+                                <h3>
+                                    <a @producto.Precio></a>
+                                    <a @producto.Nombre></a>
+                                </h3>
+                                <p>@producto.Descripcion</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--::footer_part end::-->
+    <!-- jquery plugins here-->
+    <script src="~/Scripts/Template/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="~/Scripts/Template/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="~/Scripts/Template/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="~/Scripts/Template/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="~/Scripts/Template/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="~/Scripts/Template/mixitup.min.js"></script>
+    <!-- particles js -->
+    <script src="~/Scripts/Template/owl.carousel.min.js"></script>
+    <script src="~/Scripts/Template/jquery.nice-select.min.js"></script>
+    <!-- slick js -->
+    <script src="~/Scripts/Template/slick.min.js"></script>
+    <script src="~/Scripts/Template/jquery.counterup.min.js"></script>
+    <script src="~/Scripts/Template/waypoints.min.js"></script>
+    <script src="~/Scripts/Template/contact.js"></script>
+    <script src="~/Scripts/Template/jquery.ajaxchimp.min.js"></script>
+    <script src="~/Scripts/Template/jquery.form.js"></script>
+    <script src="~/Scripts/Template/jquery.validate.min.js"></script>
+    <script src="~/Scripts/Template/mail-script.js"></script>
+    <!-- custom js -->
+    <script src="~/Scripts/Template/custom.js"></script>
+</body>
+
+</html>

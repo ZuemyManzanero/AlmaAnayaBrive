@@ -1,0 +1,48 @@
+﻿
+@model ML.Sucursal
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sucursales</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <h5>Seleccione una sucursal para editarlo o (+) para agregar...</h5>
+        <hr />
+    </div>
+
+</div>
+
+<div style="float:right;">
+    @Html.ActionLink("+", "Form", "Sucursal", htmlAttributes: new { @class = "btn btn-success" })
+
+</div>
+
+<table class="table table-bordered table-responsive">
+    <thead>
+        <tr>
+            <td>Editar</td>
+            <td class="hidden">IdSucursal</td>
+            <td>Nombre</td>
+            <td>ubicacion</td>
+            <td>Telefono</td>
+            <td>Eliminar</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ML.Sucursal sucursal in Model.Sucursales)
+        {
+            <tr>
+                <td><a class="btn btn-warning bi bi-pencil" href="@Url.Action("Form", "Sucursal", new { IdSucursal = sucursal.IdSucursal })"></a></td>
+                <td class="hidden">@sucursal.IdSucursal</td>
+                <td>@sucursal.Nombre </td>
+                <td>@sucursal.Ubicacion</td>
+                <td>@sucursal.Telefono</td>
+                <td><a class="btn btn-danger bi bi-trash3-fill" href="@Url.Action("Delete", "Sucursal", new { IdSucursal = sucursal.IdSucursal})" onclick="return confirm('Estas seguro que deseas eliminar este registro?');"></a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
