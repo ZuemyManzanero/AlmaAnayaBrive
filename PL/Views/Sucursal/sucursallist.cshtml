@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Productos</title>
+    <title>Sucursales</title>
     <link rel="icon" href="../../img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../Content/template/bootstrap.css">
@@ -73,7 +73,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="breadcrumb-item">
-                        <h2>Lista de Productos</h2>
+                        <h2>Lista de Sucursales</h2>
                     </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="breadcrumb-item">
-                        <a class="nav-link" href="@Url.Action("Form", "Producto", "Producto")"><h2>Agregar Productos</h2></a>
+                        <a class="nav-link" href="@Url.Action("Form", "Sucursal", "Sucursal")"><h2>Agregar Sucursal</h2></a>
                     </div>
                 </div>
             </div>
@@ -93,36 +93,18 @@
 
     <!-- breadcrumb part end-->
     <!-- product list part start-->
-    <section class="product_list section_padding">
-        <div class="container">
-            <div class="product_list">
-                <div class="row">
-                    @foreach (ML.Producto producto in Model.Productos)
-                    {
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="single_product_item">
-                                @if (producto.Imagen != null && producto.Imagen != "")
-                                {
-                                    <img src="data:image/*;base64,@producto.Imagen" class="rounded mx-auto" style="width:auto ; height:150px" />
-                                }
-                                else
-                                {
-
-                                    <img src="~/img/tranding_item/tranding_item_5.png" width="auto" class="rounded mx-auto" height="150px" id="Img" />
-                                }
-
-                                <h3>
-                                    <a @producto.Precio></a>
-                                    <a @producto.Nombre></a>
-                                </h3>
-                                <p>@producto.Descripcion</p>
-                            </div>
-                        </div>
-                    }
-                </div>
-            </div>
-        </div>
-
+    <section class="sucursal_list section_padding">
+        <table class="card-columns">
+            @foreach (ML.Sucursal sucursal in Model.Sucursales)
+            {
+                <tr>
+                    <td>@sucursal.Nombre</td>
+                    <td></td>
+                    <td>@sucursal.Ubicacion</td>
+                    <td></td>
+                </tr>
+            }
+        </table>
     </section>
 
     <!--::footer_part end::-->

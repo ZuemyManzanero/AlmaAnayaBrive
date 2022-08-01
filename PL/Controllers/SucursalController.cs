@@ -9,7 +9,7 @@ namespace PL.Controllers
     public class SucursalController : Controller
     {
         [HttpGet]
-        public ActionResult GetAll()
+        public ActionResult sucursallist()
         {
             ML.Sucursal sucursal = new ML.Sucursal();
             ML.Result result = new ML.Result();

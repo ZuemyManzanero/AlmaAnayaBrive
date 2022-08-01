@@ -558,6 +558,7 @@
     <Content Include="webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Template\Index.cshtml" />
     <Content Include="Views\Producto\productolist.cshtml" />
+    <Content Include="Views\Sucursal\sucursallist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
